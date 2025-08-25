@@ -14,9 +14,10 @@ suspend fun main (args: Array<String>) {
 class TmdbService (
     private val tmdbClient: TmdbClient? = TmdbClient(),
 ) {
-    suspend fun sendRequest (tmdbRequest: TmdbRequestInterface) {
+    suspend fun sendRequest (tmdbRequest: TmdbRequestInterface): String {
         val testRespone = this.tmdbClient!!.sendRequest(tmdbRequest)
-        
-        println(testRespone)
+
+        // return strings here is purely for testing, this will get changed
+        return testRespone
     }
 }
